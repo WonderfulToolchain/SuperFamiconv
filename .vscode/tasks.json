@@ -1,30 +1,40 @@
 {
-    "version": "0.1.0",
-    "command": "make",
-    "isShellCommand": true,
-    "args": ["DEBUG=1", "-j4"],
-    "suppressTaskName": true,
+    "version": "2.0.0",
+	"command": "make",
+	"args": [
+		"DEBUG=1",
+		"-j4"
+	],
     "options": {
         "cwd": "${workspaceRoot}"
     },
     "tasks": [
-        {
-            "taskName": "make",
-            "args": [],
-            "showOutput": "always",
-            "isBuildCommand": true,
-            "problemMatcher": {
-                "owner": "cpp",
-                "fileLocation": ["relative", "${workspaceRoot}"],
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "severity": 4,
-                    "message": 5
-                }
-            }
-        }
-    ]
+		{
+			"label": "make",
+			"type": "shell",
+			"args": [
+				"DEBUG=1",
+				"-j4"
+			],
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": [
+					"relative",
+					"${workspaceRoot}"
+				],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			},
+			"group": {
+				"_id": "build",
+				"isDefault": false
+			}
+		}
+	]
 }
