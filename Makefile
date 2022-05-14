@@ -5,8 +5,8 @@ INC_DIR := include
 BIN_DIR := bin
 OBJ_DIR := .build
 
-CC  := gcc
-CXX := g++
+CC  ?= gcc
+CXX ?= g++
 
 FLAGS     := -Wall -Wextra -I$(INC_DIR)
 CXX_FLAGS := -std=c++14
