@@ -75,7 +75,7 @@ constexpr channel_t scale_up(channel_t value, unsigned shift) {
 
 // scale down value, rounding evenly
 constexpr channel_t scale_down(channel_t value, unsigned shift) {
-  return (value + (1 << (shift - 1))) >> shift;
+  return (value * ((1 << shift) - 1)) / 255;
 }
 
 //
